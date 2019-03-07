@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+  <title>Big</title>
+  <link href='big.css' rel='stylesheet' type='text/css' />
+  <link href='highlight.css' rel='stylesheet' type='text/css' />
+  <style>
+    .new-shiny { background: #aaaaaa; }
+  </style>
+  <script src='big.js'></script>
+  <script src='highlight.js'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body class='dark'>
+  <div class="title">
+    <em><code>async_hooks</code></em>
+    <div style="font-size: 0.6em; text-align: lefleftt;">
+      status (March 2019)
+    </div>
+    <br>
+    <div style="font-size: 0.2em; text-align: right;">
+      <em>@</em>matteocollina
+    </div>
+  </div>
+  <div>
+    <img src="./nearform.svg">
+  </div>
+  <div>
+    <em>Three</em> use cases
+  </div>
+  <div>
+    1. <em>Developers</em> needs <em>continuation local storage</em>
+  </div>
+  <div>
+    <em><code>async_hooks</code></em> are essential for <em>continuation local storage</em>
+  </div>
+  <div>
+    2. <em>Companies</em> are shipping <em>distributed tracing</em>
+  </div>
+  <div>
+    <em><code>async_hooks</code></em> are essential for <em>distributed tracing</em>
+  </div>
+  <div>
+    3. <em><code>async_hooks</code></em> enables to track native resource <em>lifecycle</em>
+    and the <em>asynchronous context</em>
+  </div>
+  <div>
+    <em>Problem</em>: Overhead of <code>async_hooks</code>
+  </div>
+  <div>
+    <em><code>async_hooks</code></em> where born to track <em>native resources</em>. Adapted for <em>Promises</em>.
+  </div>
+  <div>
+    <!--
+      It requires the Javascript layer.
+      If I want to track a purely native layer handle I have to wrap
+      it in a AsyncWrap with a JavaScript object Just so it can be tracked.
+      That is wasteful.
+      Example: James has to create a Send wrap for Quic even tho it's completely
+      native layer. And there are timers that are not being tracked.
+    -->
+    <em>Problem</em>: <code>async_hooks</code> requries a JS layer
+  </div>
+  <div>
+    <code>currentAsyncResource()</code> API
+  </div>
+  <div>
+    <em>Problem</em>: <code>async_hooks</code> are experimental.
+  </div>
+  <div>
+    Blockers for stability?
+  </div>
+  <div class="title">
+    <div style="height: 30%" class="supersplit">
+      Thanks
+    </div>
+    <div style="font-size: 0.2em">
+      <em>@</em>matteocollina
+    </div>
+  </div>
+</body>
+</html>
